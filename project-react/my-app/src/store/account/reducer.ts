@@ -7,7 +7,7 @@ const initialState:AccountState = {
     token: null
 }
 
-const accountReducer = (state: AccountState = initialState, action: any): AccountState => {
+const accountReducer = (state: AccountState = initialState, action: AccountActionTypes | any): AccountState => {
     switch(action.type){
         case LOGIN_REQUEST:{
             return { ...state, loading: true}
