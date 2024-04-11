@@ -1,8 +1,10 @@
 import React from 'react'
-import { DashboardOutlined, SolutionOutlined } from '@ant-design/icons';
+import { CaretDownFilled, DashboardOutlined, LoginOutlined, LogoutOutlined, SettingOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Breadcrumb, Dropdown, Layout, Menu, theme } from 'antd';
 import { Outlet, useNavigate } from 'react-router-dom';
+
+import './style.css'
 
 const { Header, Content, Sider } = Layout;
 
@@ -22,6 +24,28 @@ const navSider: MenuItem[] = [
     getItem('Quản lý', 'manage', <SolutionOutlined />),
 ]
 
+const items: MenuProps['items'] = [
+    {
+      label: 'Thông tin cá nhân',
+      key: '0',
+      icon: <UserOutlined />,
+    },
+    {
+      label: 'Cài đặt',
+      key: '1',
+      icon: <SettingOutlined />,
+      
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: 'Đăng xuất',
+      key: '4',
+      icon: <LogoutOutlined />,
+    },
+  ];
+
 const Admin = () => {
 
     const navigate = useNavigate();
@@ -37,7 +61,7 @@ const Admin = () => {
   return (
     <Layout style={{ position: 'fixed', width: '100%', height: '100%' }}>
     <Header style={{ display: 'flex', alignItems: 'center' }}>
-        <div className="demo-logo" />
+        <div className="demo-logo mr-5 text-white" >LOGO</div>
         <Menu
             theme="dark"
             mode="horizontal"
@@ -45,6 +69,20 @@ const Admin = () => {
             items={navHeader}
             style={{ flex: 1, minWidth: 0 }}
         />
+         <Dropdown menu={{ items }} trigger={['click']}>
+            <div className="account">
+                <div className="avatar">
+                    <img src="https://geo-static.traxsource.com/files/images/213973340b3b5dc3b980f7d5c07183e0.jpg" width={45} alt="avatar" />
+                </div>
+                <div className="dot-dropdown">
+                    <div className="icon">
+                        <CaretDownFilled />
+                    </div>
+                </div>
+            </div>
+        </Dropdown>
+        
+        
     </Header>
     <Layout>
         <Sider width={200} style={{ background: colorBgContainer }}>

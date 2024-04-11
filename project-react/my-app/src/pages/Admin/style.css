@@ -1,0 +1,32 @@
+.account{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px;
+    position: relative;
+    cursor: pointer;
+}
+
+.account .avatar img{
+    border-radius: 50px;
+}
+
+.dot-dropdown{
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    border: 1px solid #001529;
+    position: absolute;
+    background: #001529;
+    bottom: 0;
+    right: 0;
+}
+
+.dot-dropdown .icon {
+    color: #fff;
+    display: flex;
+    position: relative;
+    top: 1px;
+    left: 1px;
+    font-size: 12px;
+}
