@@ -1,0 +1,34 @@
+.control-item {
+    .touched.has-error {
+        border: solid 1px #c70e0e;
+    }
+}
+
+.control-label {
+    color: #2a2a2a;
+    font-size: 16px;
+}
+
+.control-error {
+    color: #c70e0e;
+}
+
+.input-textarea {
+    width: 100%;
+
+    textarea {
+        width: 100%;
+        border-radius: 3px;
+        border: solid 1px #3e3c3c;
+    }
+}
+
+.input-text {
+    width: 100%;
+
+    input {
+        width: 100%;
+        border-radius: 3px;
+        border: solid 1px #3e3c3c;
+    }
+}

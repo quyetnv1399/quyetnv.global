@@ -17,3 +17,30 @@ code {
 .required{
   color: #ff4d4f;
 }
+
+.ant-card-head-title{
+  flex: none !important;
+}
+
+.input-label{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-label label {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.cs-input {
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+  border-color: #1890ff;
+}

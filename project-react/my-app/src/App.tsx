@@ -6,7 +6,7 @@ import Login from './pages/Account/Login';
 
 const router = createBrowserRouter([
     { path: "/", element: "ádasdasd"},
-    { path: "/dang-nhap", element: <Login />},
+    { path: "/admin/login", element: <Login />},
     { path: "/admin", element: <Admin />, children: [
       { path: "", element: "adminhome"}
     ]},
