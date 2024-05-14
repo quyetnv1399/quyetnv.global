@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Checkbox } from 'antd';
 import { useForm } from 'react-hook-form';
-import CsForm from '../../shared/components/Cs-form/CsForm';
+import CsForm from '../../common/controls/CsForm';
 
 const Login = () => {
 
