@@ -12,8 +12,6 @@ code {
     monospace;
 }
 
-@import 'primeflex/primeflex.css';
-
 .required{
   color: #ff4d4f;
 }
