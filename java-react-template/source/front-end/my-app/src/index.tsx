@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import configureAppStore from './store'
 
+// import './_metronic/assets/sass/style.scss'
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
