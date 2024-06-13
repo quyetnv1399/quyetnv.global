@@ -1,0 +1,21 @@
+# Spring properties
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+    routes:
+      id: bookservice
+      uri: http://localhost:9090
+      predicates: 
+        Path=/api/v1/books/**
+
+# HTTP Server
+server:
+  port: 1309
+  
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
