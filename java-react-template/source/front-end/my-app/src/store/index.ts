@@ -1,14 +1,9 @@
-import { accountReducer } from "./account/reducer";
 import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "../reducers";
 
+const store = configureStore({
+  reducer: rootReducer,
+});
 
-export default function configureAppStore() {
-    const store = configureStore({
-        // Automatically calls `combineReducers`
-        reducer: {
-            account: accountReducer
-        }
-      })
-
-    return store
-}
+export default store;
+export type AppDispatch = typeof store.dispatch;

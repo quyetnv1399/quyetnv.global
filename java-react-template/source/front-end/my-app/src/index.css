@@ -16,6 +16,10 @@ code {
   color: #ff4d4f;
 }
 
+.txt-rq{
+  font-size: 12px;
+}
+
 .ant-card-head-title{
   flex: none !important;
 }

@@ -1,0 +1,27 @@
+# Conversion to YAML from Properties formar report
+# Warnings:
+# - The yaml file had comments which are lost in the refactoring!
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+      - id: student
+        uri: http://student-service:9001
+        predicates:
+        - Path=/api/v1/students/**
+        filters:
+        - RewritePath=/api/v1/students/(?<segment>.*), /${segment}
+  config:
+    import: optional:configserver:http://localhost:8888
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka

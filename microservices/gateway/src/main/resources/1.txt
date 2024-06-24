@@ -1,0 +1,24 @@
+#Tên ứng dụng của Eureka Server
+spring.application.name=gateway
+
+# Cổng API Gateway
+server.port=8080
+
+# Cấu hình Eureka Client để API Gateway đăng ký với Eureka Server
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+
+# Cấu hình để API Gateway lắng nghe trên địa chỉ IP và cổng của nó
+spring.cloud.gateway.discovery.locator.enabled=true
+spring.cloud.gateway.discovery.locator.lowerCaseServiceId=true
+
+# Cấu hình định tuyến
+spring.cloud.gateway.routes[0].id=student-service
+spring.cloud.gateway.routes[0].uri=http://student-service:9001
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/v1/students/**
+spring.cloud.gateway.routes[0].filters[0]=RewritePath=/api/v1/students/(?<segment>.*), /$\{segment}
+
+# ConfigServer
+spring.config.import=optional:configserver:http://localhost:8888
+
+
+
